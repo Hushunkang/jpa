@@ -14,7 +14,14 @@ import java.util.Date;
 public class Customer {
 
     @Id//表示这个属性对应的是主键字段
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//这种策略表示主键由数据库自动生成，支持sql server、mysql、db2等
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)//这种策略表示主键由数据库自动生成，支持sql server、mysql、db2等
+    @TableGenerator(name="ID_GENERATOR",
+        table="test_id_generate",
+        pkColumnName="pk_name",
+        pkColumnValue="customer_id",
+        valueColumnName="pk_value",
+        allocationSize=100)
+    @GeneratedValue(strategy = GenerationType.TABLE,generator = "ID_GENERATE")
     private int id;
 
     @Column//表示这个属性对应的是非主键字段

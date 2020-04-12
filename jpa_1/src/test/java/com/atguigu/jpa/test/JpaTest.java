@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -40,8 +41,8 @@ public class JpaTest {
         customer.setLastName("Tom");
         customer.setAge(12);
         customer.setEmail("tom@atguigu.com");
-//        customer.setBirth(new Date());
-//        customer.setCreatedTime(new Date());
+        customer.setBirth(new Date());
+        customer.setGmtCreated(new Date());
         entityManager.persist(customer);
 
         //5、提交事务

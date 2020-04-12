@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="jpa_1" transaction-type="RESOURCE_LOCAL">
+        <!--
+        配置用啥orm厂商作为jpa的实现
+        1、说白了就是配置javax.persistence.spi.PersistenceProvider接口的实现类
+        2、若jpa项目里面只有一个jpa的实现产品，这一项也可以不配置
+        -->
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-    <persistence-unit name="NewPersistenceUnit"/>
+        <!-- 添加持久化类 -->
+        <class>com.atguigu.jpa.entity.Customer</class>
+
+        <properties>
+            <!-- 数据库连接的基本信息 -->
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql:///jpa?serverTimezone=GMT%2B8"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="123456"/>
+
+            <!-- 配置jpa这个规范具体实现产品的基本属性，此处为hibernate -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+        </properties>
+    </persistence-unit>
 </persistence>

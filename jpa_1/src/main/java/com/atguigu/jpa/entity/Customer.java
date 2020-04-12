@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class Customer {
 
     @Id//表示这个属性对应的是主键字段
-    @GeneratedValue(strategy = GenerationType.AUTO)//根据底层数据库的情况选用主键生成策略
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//这种策略表示主键由数据库自动生成，支持sql server、mysql、db2等
     private int id;
 
     @Column//表示这个属性对应的是非主键字段

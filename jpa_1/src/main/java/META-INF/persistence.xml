@@ -19,7 +19,7 @@
             <property name="javax.persistence.jdbc.password" value="123456"/>
 
             <!-- 配置jpa这个规范具体实现产品的基本属性，此处为hibernate -->
-            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>

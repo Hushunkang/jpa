@@ -37,9 +37,9 @@ public class JpaTest {
 
         //4、进行持久化操作
         Customer customer = new Customer();
+        customer.setLastName("Tom");
         customer.setAge(12);
         customer.setEmail("tom@atguigu.com");
-        customer.setLastName("Tom");
 //        customer.setBirth(new Date());
 //        customer.setCreatedTime(new Date());
         entityManager.persist(customer);

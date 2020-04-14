@@ -7,7 +7,7 @@ import java.util.Date;
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
  * @description
- * @create 2020年04月12日 08时56分58秒
+ * @create 2020年04月12日
  */
 @Entity//表示这不是一个普通的实体类而是与数据库表做映射的实体类
 @Table(name = "customer")//显式说明我这个实体类映射的表名为customer

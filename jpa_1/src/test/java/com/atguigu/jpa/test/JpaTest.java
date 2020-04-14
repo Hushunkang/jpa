@@ -15,7 +15,7 @@ import java.util.Map;
  * @author hskBeginner Email：2752962035@qq.com
  * @version 1.0
  * @description
- * @create 2020年04月12日 09时57分24秒
+ * @create 2020年04月12日
  */
 public class JpaTest {
 
@@ -27,7 +27,7 @@ public class JpaTest {
         properites.put("hibernate.show_sql", true);
         EntityManagerFactory entityManagerFactory =
                 //Persistence.createEntityManagerFactory(persistenceUnitName);
-                Persistence.createEntityManagerFactory(persistenceUnitName, properites);
+                Persistence.createEntityManagerFactory(persistenceUnitName,properites);
 
         //2、创建EntityManager，类似于Hibernate的SessionFactory
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -53,6 +53,7 @@ public class JpaTest {
 
         //7、关闭EntityManagerFactory
         entityManagerFactory.close();
+        //todo p08，后期继续更新
     }
 
 }
